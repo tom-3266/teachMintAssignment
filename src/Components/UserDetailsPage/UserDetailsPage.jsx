@@ -146,27 +146,30 @@ const UserDetailsPage = () => {
             <Spin size="large" />
           </div>
         )}
-        <div className={style["postsHeader"]}>Posts:</div>
+
         {posts.length > 0 && (
-          <div className={style["postsContainer"]}>
-            {posts.map((postVal) => {
-              return (
-                <div
-                  className={style["posts"]}
-                  key={postVal.id}
-                  onClick={() =>
-                    setModalOpenVal({
-                      open: true,
-                      title: postVal.title,
-                      description: postVal.body,
-                    })
-                  }
-                >
-                  <div className={style["postsTitle"]}>{postVal.title}</div>
-                  <div className={style["postsBody"]}>{postVal.body}</div>
-                </div>
-              );
-            })}
+          <div>
+            <div className={style["postsHeader"]}>Posts:</div>
+            <div className={style["postsContainer"]}>
+              {posts.map((postVal) => {
+                return (
+                  <div
+                    className={style["posts"]}
+                    key={postVal.id}
+                    onClick={() =>
+                      setModalOpenVal({
+                        open: true,
+                        title: postVal.title,
+                        description: postVal.body,
+                      })
+                    }
+                  >
+                    <div className={style["postsTitle"]}>{postVal.title}</div>
+                    <div className={style["postsBody"]}>{postVal.body}</div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         )}
         {modalOpenVal.open && (
