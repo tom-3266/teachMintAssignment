@@ -2,14 +2,20 @@ import React, { useCallback, useEffect, useState } from "react";
 import style from "./userListPage.module.scss";
 import axios from "axios";
 import { URLS } from "../../environment/environment";
+import { useNavigate } from "react-router-dom";
+import { Spin } from "antd";
 
 const UserListPage = () => {
+  let navigate = useNavigate();
   const [users, setUsers] = useState([]);
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const getUserListAPICall = useCallback((url) => {
+    setLoading(true);
     axios.get(url).then((respose) => {
       setUsers(respose.data);
+      setLoading(false);
     });
   }, []);
   const getAllPostsAPICall = useCallback((url) => {
@@ -23,8 +29,6 @@ const UserListPage = () => {
     posts.length > 0 &&
       posts.forEach((entry) => {
         const userId = entry.userId;
-
-        // Increment the count for the userId
         if (userIdCount[userId]) {
           userIdCount[userId]++;
         } else {
@@ -36,6 +40,7 @@ const UserListPage = () => {
       ...user,
       postCount: userIdCount[index + 1],
     }));
+
     return usersCount;
   }, [posts, users]);
 
@@ -45,16 +50,27 @@ const UserListPage = () => {
   }, []);
 
   useEffect(() => {
-    console.log(getUserPostAndCount());
+    getUserPostAndCount();
   }, [posts]);
 
   return (
     <div className={style["userList--container"]}>
       <div className={style["header"]}>Directory</div>
       <div className={style["borderArea"]}>
+        {loading && (
+          <div className={style["loader"]}>
+            <Spin size="large" />
+          </div>
+        )}
         {getUserPostAndCount().map((user) => {
           return (
-            <div className={style["individualUser"]} key={user.id}>
+            <div
+              className={style["individualUser"]}
+              key={user.id}
+              onClick={() => {
+                navigate(`/userDetails?userId=${user.id}`, { state: user });
+              }}
+            >
               <div className={style["userName"]}>Name: {user.name}</div>
               <div className={style["userPostNumber"]}>
                 Posts: {user.postCount}

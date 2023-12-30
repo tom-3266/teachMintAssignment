@@ -1,0 +1,219 @@
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  height: 94.5vh;
+  .postsHeader {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: start;
+    margin-top: 40px;
+  }
+  .headerContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .borderArea {
+    // display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #5f5f5f;
+    border-radius: 5px;
+    padding: 20px;
+    height: 100%;
+    width: 80%;
+    overflow-y: auto;
+
+    .profileDetails {
+      margin-top: 40px;
+      border-radius: 5px;
+      border: 1px solid #dfdfdf;
+      min-height: 140px;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  .timeZoneContainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    align-items: center;
+
+    .timeContainer {
+      min-width: 150px;
+      text-align: center;
+    }
+  }
+  .postsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-top: 20px;
+    gap: 20px;
+    .posts {
+      border: 1px solid #dfdfdf;
+      min-height: 200px;
+      flex: 0 0 28.3%;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+      box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+      cursor: pointer;
+      .postsTitle {
+        font-size: 16px;
+        font-weight: 500;
+      }
+      .postsBody {
+        word-wrap: break-word;
+      }
+    }
+  }
+}
+
+.loader {
+  text-align: center;
+  padding-top: 40px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .detailsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    height: 94.5vh;
+
+    .timeZoneContainer {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+
+      .timeContainer {
+        min-width: 150px;
+        text-align: center;
+      }
+    }
+    .postsContainer {
+      // display: flex;
+      flex-wrap: wrap;
+      flex-grow: 2;
+      padding-left: 0;
+      margin-top: 20px;
+      gap: 20px;
+      .posts {
+        border: 1px solid #dfdfdf;
+        min-height: 200px;
+        flex: 0 41%;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+        cursor: pointer;
+        .postsTitle {
+          font-size: 16px;
+          font-weight: 500;
+        }
+        .postsBody {
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 370px) and (max-width: 767px) {
+  .detailsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    height: 94.5vh;
+
+    .timeZoneContainer {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      align-items: center;
+
+      .timeContainer {
+        min-width: 150px;
+        text-align: center;
+      }
+    }
+    .borderArea {
+      // display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border: 1px solid #5f5f5f;
+      border-radius: 5px;
+      padding: 20px;
+      height: 100%;
+      width: 80%;
+      overflow-y: auto;
+
+      .profileDetails {
+        margin-top: 40px;
+        border-radius: 5px;
+        border: 1px solid #dfdfdf;
+        min-height: 140px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    .postsContainer {
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 0;
+      margin-top: 20px;
+      gap: 20px;
+      .posts {
+        border: 1px solid #dfdfdf;
+        min-height: 200px;
+        flex: 97%;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+        cursor: pointer;
+        .postsTitle {
+          font-size: 16px;
+          font-weight: 500;
+        }
+        .postsBody {
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+}
