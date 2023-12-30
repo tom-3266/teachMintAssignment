@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import style from "./userDetailsPage.module.scss";
 import { URLS } from "../../environment/environment";
 import axios from "axios";
