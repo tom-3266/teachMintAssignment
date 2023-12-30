@@ -1,0 +1,47 @@
+.backgroundColor {
+  background-color: rgba(0, 0, 0, 0.602);
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal {
+  width: 350px;
+  height: 270px;
+  background: white;
+  color: white;
+  z-index: 10;
+  border-radius: 5px;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+}
+
+.heading {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modalContent-title {
+  padding: 10px;
+  font-size: 16px;
+  color: #2c3e50;
+  text-align: center;
+  font-weight: 500;
+}
+.modalContent-description {
+  padding: 10px;
+  font-size: 14px;
+  color: #2c3e50;
+  text-align: center;
+}
